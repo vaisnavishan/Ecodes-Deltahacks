@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Image, TextInput, Pressable } from 'react-native';
+import {useState, useEffect} from 'react';
+import { StyleSheet, Text, View, Button, Image, TextInput, Pressable, Switch, Alert } from 'react-native';
 import { SafeAreaView, ScrollView, TouchableOpacity, useColorScheme, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -9,6 +10,10 @@ import { useFonts, Comfortaa_300Light, Comfortaa_400Regular, Comfortaa_500Medium
 import { AntDesign } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
+import Camera from './Camera';
+
+
 
 
 /* starting page -> this is what the user will first see when they download the app. they can sign up or log in */
@@ -88,9 +93,9 @@ function HomePage({navigation}) {
       <Image style={styles.miniLogo} source={require('./assets/logo.png')} />
       <Text style={styles.userName}>Hi Kemi,</Text>
       <Text style={styles.text1}>SCAN THE QR CODE. SAVE THE PLANT!</Text>
-      <Ionicons name="earth" size={140} color="black" />
+      <Image style={styles.background} source={require('./assets/environment.jpg')} />
 
-      <TouchableOpacity style={styles.cameraButton} onPress={() => navigation.navigate('Points Page')}>
+      <TouchableOpacity style={styles.cameraButton} onPress={() => navigation.navigate('Camera')}>
       <Entypo name="camera" size={50} color="white" />
       </TouchableOpacity>
 
@@ -117,13 +122,34 @@ function PointsPage({navigation}) {
   return (
     <View style={styles.container3}>
       <View style={styles.banner}>
+        <Image style={styles.miniLogo2} source={require('./assets/logoGreen.png')} />
+        <Text style={styles.point}>Points</Text>
+        <Text style={styles.text2}>Here are all your points. Keep it going for a reward!</Text>
       </View>
-      <Image style={styles.miniLogo2} source={require('./assets/logoGreen.png')} />
-      <Text style={styles.point}>Points</Text>
-      <Text style={styles.text2}>Here are all your points. Keep it going for a reward!</Text>
       <Text style={styles.text3}>43,070 pts</Text>
 
-      <View></View>
+      <View style={styles.pointsContainer}>
+
+      </View>
+      <View style={[styles.box, styles.elevation]} >
+        <Text style={styles.text5}>You took the bus!</Text>
+        <Text style={styles.text6}>Points: 300</Text>
+      </View>
+
+      <View style={[styles.box, styles.elevation]} >
+        <Text style={styles.text5}>You took the bus!</Text>
+        <Text style={styles.text6}>Points: 300</Text>
+      </View>
+
+      <View style={[styles.box, styles.elevation]} >
+        <Text style={styles.text5}>You took the bus!</Text>
+        <Text style={styles.text6}>Points: 300</Text>
+      </View>
+
+      <View style={[styles.box, styles.elevation]} >
+        <Text style={styles.text5}>You took the bus!</Text>
+        <Text style={styles.text6}>Points: 300</Text>
+      </View>
 
       <View style={styles.navContainer}>
         <View style={styles.navBar}>
@@ -157,6 +183,10 @@ function ProfilePage({navigation}) {
       <Text style={styles.loginButtonText2}>EDIT PROFILE</Text>
       </TouchableOpacity>
 
+      <Image style={styles.reminders} source={require('./assets/reminders.png')} />
+
+      <View style={styles.br}></View>
+
       <View style={styles.navContainer}>
         <View style={styles.navBar}>
           <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points Page')}>
@@ -178,7 +208,22 @@ function ProfilePage({navigation}) {
 
 const Stack = createNativeStackNavigator();
 
+
 export default function App() {
+  /*
+  const [isEnabled,setIsEnabled] = useState(false)
+  const toggleSwitch = () =>{
+    setIsEnabled(previousState=>!previousState)
+  }
+
+  <Switch
+        trackColor={{ false: "grey", true: "#80A87D" }}
+        thumbColor={isEnabled ? "#BDBDBD" : "pink"}
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+  */
+
   let [fontsLoaded, error] = useFonts ({
     Comfortaa_400Regular,
   });
@@ -197,6 +242,7 @@ export default function App() {
         <Stack.Screen name="Home Page" component={HomePage} />
         <Stack.Screen name="Points Page" component={PointsPage} />
         <Stack.Screen name="Profile Page" component={ProfilePage} />
+        <Stack.Screen name="Camera" component={Camera} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -332,33 +378,34 @@ const styles = StyleSheet.create({
     backgroundColor: '#80A87D',
     borderRadius: 200,
     padding: 20,
-    top: 30,
+    bottom: 80,
   },
 
   miniLogo: {
     width: 40,
     height: 60,
-    bottom: 140,
-  },
-
-  plant: {
-    width: 120,
-    height: 150,
-    bottom: 50,
+    bottom: 60,
   },
 
   userName: {
     fontSize: 35,
     right: 100,
-    bottom: 140,
+    bottom: 65,
+    fontWeight: 'bold',
+    color: '#80A87D',
     fontFamily: 'Comfortaa_400Regular',
   },
 
   text1: {
-    right: 47,
+    right: 43,
     fontSize: 15,
     fontWeight: "bold",
-    bottom: 130,
+    bottom: 50,
+  },
+
+  background: {
+    width: '100%',
+    bottom: 30,
   },
 
   /* PROFILE PAGE ---------------------------*/
@@ -366,7 +413,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     width: 150,
     height: 150,
-    bottom: 20,
   },
 
   editProfileButton: {
@@ -377,55 +423,95 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#80A87D",
-    bottom: 180,
+    bottom: 60,
   },
 
   text4: {
     fontSize: 15,
     fontWeight: "bold",
-    bottom: 200,
+    bottom: 55,
   },
 
   location: {
-    paddingBottom: 200,
+    paddingTop: 10,
+    paddingBottom: 55,
   },
+
+  reminders: {
+    width: 300,
+    height: 200,
+  },
+
+  br: {
+    height: 80,
+  },
+
 
    /* POINTS PAGE ---------------------------*/
    banner: {
     flexDirection: 'row',
     backgroundColor: "#80A87D",
     width: '100%',
-    height: '30%',
+    height: '22%',
     justifyContent: 'space-evenly',
-    bottom: 170,
+    bottom: 50,
    },
 
    point: {
     fontSize: 35,
-    right: 110,
-    bottom: 330,
     color: 'white',
     fontFamily: 'Comfortaa_400Regular',
+    top: 65,
   },
 
   miniLogo2: {
     width: 40,
     height: 60,
-    bottom: 300,
+    top: 20,
+    left: 170,
   },
 
   text2: {
-    right: 16,
     fontSize: 15,
     color: 'white',
-    bottom: 320,
+    top: 110,
+    right: 75,
   },
 
   text3: {
     fontSize: 70,
     color: "#80A87D",
-    bottom: 280,
+    bottom: 35,
     fontWeight: "bold"
+  },
+
+  box: {
+    backgroundColor: 'white',
+    width: 321,
+    height: 70,
+    borderRadius: 10,
+    shadowOpacity: 5,
+    marginBottom: 12,
+  },
+  
+  elevation: {
+    elevation: 10,
+    shadowColor: '#171717',
+  },
+
+  text5:{
+    color: "#80A87D", 
+    fontWeight:"bold",
+    fontSize: 20,
+    paddingTop: 10,
+    alignSelf: 'center',
+  },
+
+  text6:{
+    color: "black", 
+    fontSize: 20,
+    paddingBottom: 10,
+    alignSelf: 'center',
   },
 
 });
