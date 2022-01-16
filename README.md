@@ -9,7 +9,7 @@ https://www.figma.com/proto/bE2aQSxRT4I4kffUGMMPF3/Ecode?node-id=0%3A68&starting
 * [Next Steps](#next-steps)
 
 ## Demo
-This project is an informative web app regarding hypertension. This web app also includes a cool chatbot feature!
+This project is 
 ### Figma Prototyping
 ### QR Codes 
 ### Walkthrough Demo of our App
