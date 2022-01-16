@@ -12,7 +12,7 @@ This project is
 ### Figma Prototyping
 ### QR Codes 
 ### Walkthrough Demo of our App
-https://drive.google.com/file/d/1suT7tPila3rz4PSmoyl42G5gyAwrC_vu/view?usp=sharing
+https://www.youtube.com/watch?v=6HJWs5TyyB0
 
 
 
