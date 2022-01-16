@@ -31,7 +31,8 @@ Project is created with:
 
 ## Next Steps
 In the future, we'd like to:
-* Clean up our subpages and incorporate more visuals and possible animations to decrease the amount of text present.
+* Add a location feature to send users text-based reminders to the user, informing them that an Ecode is nearby. We can use the Geolocation Google Maps API and Twilio API to implement this. 
+* Add a carpooling feature which enables users to earn points together by carpooling with one another!!
 
 
 
