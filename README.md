@@ -29,7 +29,7 @@ Download the Expo app or open your phone camera/google lens and try it out! Note
 Project is created with:
 * React.js
 * Python
-* APIs ()
+* APIs (Twilio, Open Weather Map, Geolocation)
 
 	
 
