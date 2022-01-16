@@ -23,6 +23,9 @@ https://www.figma.com/proto/bE2aQSxRT4I4kffUGMMPF3/Ecode?node-id=0%3A68&starting
 ### Walkthrough Demo of our App
 https://drive.google.com/file/d/1suT7tPila3rz4PSmoyl42G5gyAwrC_vu/view?usp=sharing
 
+### Slide Deck 
+https://docs.google.com/presentation/d/1Q2-DAwDA44Lek4d1uYRgQvxGA596H27vUSvdyJ3MEOo/edit?usp=sharing
+
 
 
 
