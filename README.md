@@ -13,6 +13,8 @@ This project is an informative web app regarding hypertension. This web app also
 ### Figma Prototyping
 ### QR Codes 
 ### Walkthrough Demo of our App
+![image](https://user-images.githubusercontent.com/77128514/149666881-7234ae62-24a2-4871-883e-21de5f506c7a.png)
+
 
 
 	
