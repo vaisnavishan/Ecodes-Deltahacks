@@ -14,10 +14,10 @@ https://www.figma.com/proto/bE2aQSxRT4I4kffUGMMPF3/Ecode?node-id=0%3A68&starting
 ### QR Codes 
 
 <img width="288" alt="ecodes" src="https://user-images.githubusercontent.com/77128514/149668053-cd15558e-15f2-4749-baeb-03069c669836.png">
-![image](https://user-images.githubusercontent.com/77128514/149668082-91a598b2-2fba-4b48-b237-30aeef2ff4fa.png)
-![image](https://user-images.githubusercontent.com/77128514/149668090-867bdd29-c34d-42e5-8752-fa1736b2a1ef.png)
-![image](https://user-images.githubusercontent.com/77128514/149668103-7006138a-bdaa-4e38-80be-14baf640443c.png)
-![image](https://user-images.githubusercontent.com/77128514/149668113-9f766596-a84e-48b8-bb57-8eb993acf5aa.png)
+<img width="288" alt="ecodes" src="https://user-images.githubusercontent.com/77128514/149668082-91a598b2-2fba-4b48-b237-30aeef2ff4fa.png">
+<img width="288" alt="ecodes" src="https://user-images.githubusercontent.com/77128514/149668090-867bdd29-c34d-42e5-8752-fa1736b2a1ef.png">
+<img width="288" alt="ecodes" src="https://user-images.githubusercontent.com/77128514/149668103-7006138a-bdaa-4e38-80be-14baf640443c.png">
+<img width="288" alt="ecodes" src="https://user-images.githubusercontent.com/77128514/149668113-9f766596-a84e-48b8-bb57-8eb993acf5aa.png">
 
 
 ### Walkthrough Demo of our App
