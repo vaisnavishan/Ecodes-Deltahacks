@@ -10,10 +10,8 @@ import { useFonts, Comfortaa_300Light, Comfortaa_400Regular, Comfortaa_500Medium
 import { AntDesign } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
 import Camera from './Camera';
-
-
+import Points from './Points';
 
 
 /* starting page -> this is what the user will first see when they download the app. they can sign up or log in */
@@ -91,8 +89,8 @@ function HomePage({navigation}) {
     <View style={styles.container3}>
       
       <Image style={styles.miniLogo} source={require('./assets/logo.png')} />
-      <Text style={styles.userName}>Hi Kemi,</Text>
-      <Text style={styles.text1}>SCAN THE QR CODE. SAVE THE PLANT!</Text>
+      <Text style={styles.userName}>Hi Hannah,</Text>
+      <Text style={styles.text1}>SCAN THE QR CODE. SAVE THE PLANET!</Text>
       <Image style={styles.background} source={require('./assets/environment.jpg')} />
 
       <TouchableOpacity style={styles.cameraButton} onPress={() => navigation.navigate('Camera')}>
@@ -101,7 +99,7 @@ function HomePage({navigation}) {
 
       <View style={styles.navContainer}>
         <View style={styles.navBar}>
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points Page')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points')}>
           <AntDesign name="staro" size={24} color="white" />
           </TouchableOpacity>
 
@@ -117,65 +115,13 @@ function HomePage({navigation}) {
     </View>
   );
 }
-
-function PointsPage({navigation}) {
-  return (
-    <View style={styles.container3}>
-      <View style={styles.banner}>
-        <Image style={styles.miniLogo2} source={require('./assets/logoGreen.png')} />
-        <Text style={styles.point}>Points</Text>
-        <Text style={styles.text2}>Here are all your points. Keep it going for a reward!</Text>
-      </View>
-      <Text style={styles.text3}>43,070 pts</Text>
-
-      <View style={styles.pointsContainer}>
-
-      </View>
-      <View style={[styles.box, styles.elevation]} >
-        <Text style={styles.text5}>You took the bus!</Text>
-        <Text style={styles.text6}>Points: 300</Text>
-      </View>
-
-      <View style={[styles.box, styles.elevation]} >
-        <Text style={styles.text5}>You took the bus!</Text>
-        <Text style={styles.text6}>Points: 300</Text>
-      </View>
-
-      <View style={[styles.box, styles.elevation]} >
-        <Text style={styles.text5}>You took the bus!</Text>
-        <Text style={styles.text6}>Points: 300</Text>
-      </View>
-
-      <View style={[styles.box, styles.elevation]} >
-        <Text style={styles.text5}>You took the bus!</Text>
-        <Text style={styles.text6}>Points: 300</Text>
-      </View>
-
-      <View style={styles.navContainer}>
-        <View style={styles.navBar}>
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points Page')}>
-          <AntDesign name="staro" size={24} color="white" />
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Home Page')}>
-          <AntDesign name="home" size={24} color="white"/>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Profile Page')}>
-          <AntDesign name="user" size={24} color="white" />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
-  );
-}
-
 
 function ProfilePage({navigation}) {
   return (
     <View style={styles.container3}>
 
-      <Image style={styles.profile} source={require('./assets/kemi.jpg')} />
+      <Image style={styles.profile} source={require('./assets/hannah.jpeg')} />
+      <Text style={styles.userName1}>HANNAH</Text>
       <Ionicons style={styles.location} name="location-outline" size={30} color="black" />
       <Text style={styles.text4}>OAKVILLE, ON, CANADA</Text>
 
@@ -189,7 +135,7 @@ function ProfilePage({navigation}) {
 
       <View style={styles.navContainer}>
         <View style={styles.navBar}>
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points Page')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Points')}>
           <AntDesign name="staro" size={24} color="white" />
           </TouchableOpacity>
 
@@ -208,21 +154,7 @@ function ProfilePage({navigation}) {
 
 const Stack = createNativeStackNavigator();
 
-
 export default function App() {
-  /*
-  const [isEnabled,setIsEnabled] = useState(false)
-  const toggleSwitch = () =>{
-    setIsEnabled(previousState=>!previousState)
-  }
-
-  <Switch
-        trackColor={{ false: "grey", true: "#80A87D" }}
-        thumbColor={isEnabled ? "#BDBDBD" : "pink"}
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-  */
 
   let [fontsLoaded, error] = useFonts ({
     Comfortaa_400Regular,
@@ -240,9 +172,9 @@ export default function App() {
         <Stack.Screen name="Sign Up Page" component={SignUpPage} />
         <Stack.Screen name="Enter Your Name Page" component={EnterYourNamePage} />
         <Stack.Screen name="Home Page" component={HomePage} />
-        <Stack.Screen name="Points Page" component={PointsPage} />
         <Stack.Screen name="Profile Page" component={ProfilePage} />
         <Stack.Screen name="Camera" component={Camera} />
+        <Stack.Screen name="Points" component={Points} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -365,7 +297,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.5,
     borderTopColor: '#EBEBEB',
     paddingTop: 7, 
-    paddingBottom: 5, 
+    paddingBottom: 25, 
   },
 
   iconBehave: {
@@ -384,12 +316,12 @@ const styles = StyleSheet.create({
   miniLogo: {
     width: 40,
     height: 60,
-    bottom: 60,
+    bottom: 80,
   },
 
   userName: {
     fontSize: 35,
-    right: 100,
+    right: 83,
     bottom: 65,
     fontWeight: 'bold',
     color: '#80A87D',
@@ -397,7 +329,7 @@ const styles = StyleSheet.create({
   },
 
   text1: {
-    right: 43,
+    right: 34,
     fontSize: 15,
     fontWeight: "bold",
     bottom: 50,
@@ -409,10 +341,19 @@ const styles = StyleSheet.create({
   },
 
   /* PROFILE PAGE ---------------------------*/
+  userName1: {
+    fontSize: 30,
+    marginTop: 10,
+    fontWeight: 'bold',
+    color: '#80A87D',
+    fontFamily: 'Comfortaa_400Regular',
+  },
+
   profile: {
     borderRadius: 100,
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
+    bottom: 20,
   },
 
   editProfileButton: {
@@ -490,12 +431,20 @@ const styles = StyleSheet.create({
     width: 321,
     height: 70,
     borderRadius: 10,
-    shadowOpacity: 5,
     marginBottom: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+	    width: 0,
+	    height: 1,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 1.00,
+
+    elevation: 1,
   },
   
   elevation: {
-    elevation: 10,
+    elevation: 1,
     shadowColor: '#171717',
   },
 
