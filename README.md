@@ -5,7 +5,6 @@ https://www.figma.com/proto/bE2aQSxRT4I4kffUGMMPF3/Ecode?node-id=0%3A68&starting
 ## Table of contents
 * [Demo](#demo)
 * [About](#about)
-* [Available Scripts](#available-scripts)
 * [Next Steps](#next-steps)
 
 ## Demo
