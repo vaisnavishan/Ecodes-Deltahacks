@@ -26,7 +26,7 @@ Project is created with:
 	
 
 
-## Next Steps:
+## Next Steps
 In the future, we'd like to:
 * Clean up our subpages and incorporate more visuals and possible animations to decrease the amount of text present.
 
