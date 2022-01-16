@@ -21,7 +21,7 @@ https://www.figma.com/proto/bE2aQSxRT4I4kffUGMMPF3/Ecode?node-id=0%3A68&starting
 
 
 ### Walkthrough Demo of our App
-https://www.youtube.com/watch?v=6HJWs5TyyB0
+https://drive.google.com/file/d/1suT7tPila3rz4PSmoyl42G5gyAwrC_vu/view?usp=sharing
 
 
 
@@ -46,10 +46,10 @@ Project is created with:
 * Expo.io (Expo Go)
 * APIs (Twilio, OpenWeatherMap, Geolocation)
 
-###How we built it:
+### How we built it:
 We initially prototyped UI/UX using Figma, then built onto a React-Native frontend and a Flask backend. QR codes were generated for each business via python and detected using a camera access feature created in React-Native. We then moved on to use the OpenWeatherMaps API and the Twilio API in the backend to send users text-based eco-friendly reminders.
 
-##Challanges & What we learned:
+## Challanges & What we learned:
 Implementing camera access into the app and actually scanning specific QR codes that corresponded to a unique business and number of EcoPoints. But after all, there's nothing a little documentation can't solve! We took the challenge to learn new skills outside of our comfort zone, learning how to add impressive features to an app such as camera access, QR code scanning, counter updates, and aesthetic UI. Our final hack turned out to be better than we anticipated, and inspired us to develop impactful and immensely capable apps in the future :)
 
 
