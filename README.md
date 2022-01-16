@@ -1,4 +1,4 @@
-# Ecodes-Deltahacks
+# Ecodes: Saving the planet one Ecode at a time.
 
 
 ## Table of contents
